@@ -21,22 +21,27 @@ class SplashScreen extends State<splash_screen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-     body: Stack(children: [SizedBox(child: Center(
-     child: Image.asset('images/frame.png'),
-    )
-    ),
-       const Align(alignment:Alignment.bottomCenter,
-           child:Padding(
-             padding: EdgeInsets.all(61),
-             child: Text("Powered By Tech Idara",
-             style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17,color:Color(0xff000000)
-             )
-             ),
-           ),
-       ),
-
-     ]
-     )
+        body: Stack(
+            children: [
+              SizedBox(
+                  child:
+                  Center(
+                    child: Image.asset('images/frame.png'),
+                  )
+              ),
+              const Align(alignment:Alignment.bottomCenter,
+                child:Padding(
+                  padding: EdgeInsets.all(61),
+                  child: Text("Powered By Tech Idara",
+                      style: TextStyle(fontWeight: FontWeight.w500,
+                          fontSize: 17,
+                          color:Color(0xff000000),
+                      )
+                  ),
+                ),
+              ),
+            ]
+        )
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/screens/city-selection.dart';
 
 class landing_Screen extends StatelessWidget {
   const landing_Screen({Key? key}) : super(key: key);
@@ -21,8 +22,9 @@ class landing_Screen extends StatelessWidget {
                         const Spacer(),
                         GestureDetector(
                           onTap: (){
-                            Navigator.pushNamed(context, "/home");
-                          },
+                            Navigator.of(context).push
+                              (MaterialPageRoute(builder: (_) => const city_selection()));
+                            },
                           child: Container(
                               height: 72,
                               margin: const EdgeInsets.only(left: 15,right: 15),
@@ -35,10 +37,13 @@ class landing_Screen extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text("Select Current Location",style: TextStyle(fontFamily: "PoppinsMed",fontSize: 20),),
+                                  const Text("Select Current Location",
+                                    style: TextStyle(fontFamily: "PoppinsMed",fontSize: 20),
+                                  ),
                                   Image.asset("images/back-arrow.png")
                                 ],
-                              )),
+                              )
+                          ),
                         ),
                         const SizedBox(height: 10,),
                         GestureDetector(
@@ -57,7 +62,8 @@ class landing_Screen extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text("Select City",style: TextStyle(fontFamily: "PoppinsMed",fontSize: 20,color: Colors.white),
+                                  const Text("Select City",
+                                    style: TextStyle(fontFamily: "PoppinsMed",fontSize: 20,color: Colors.white),
                                   ),
                                   Image.asset("images/down_arrow.png")
                                 ],

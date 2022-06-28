@@ -48,7 +48,7 @@ class landing_Screen extends StatelessWidget {
                         const SizedBox(height: 10,),
                         GestureDetector(
                           onTap: (){
-                            Navigator.pushNamed(context, "/selectCity");
+                            Navigator.of(context).push(MaterialPageRoute(builder: (_) => const city_selection()));
                           },
                           child: Container(
                               height: 72,
@@ -65,7 +65,7 @@ class landing_Screen extends StatelessWidget {
                                   const Text("Select City",
                                     style: TextStyle(fontFamily: "PoppinsMed",fontSize: 20,color: Colors.white),
                                   ),
-                                  Image.asset("images/down_arrow.png")
+                                  Image.asset("images/back-arrow.png")
                                 ],
                               )
                           ),

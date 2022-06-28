@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/screens/home.dart';
 
 class city_selection extends StatelessWidget {
   const city_selection({Key? key}) : super(key: key);
@@ -42,6 +43,99 @@ class city_selection extends StatelessWidget {
                 )
             ),
             ),
+            const SizedBox(height: 22),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 59,
+              color: const Color(0xffF6F6F6),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
+                },
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 25,
+                      child: Image.asset("images/point.png")
+                    ),
+                    const SizedBox(width: 15),
+                    const Text("Current Location",
+                      style:
+                      TextStyle(fontSize: 25,
+                          fontFamily: "PoppinsMed",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 25),
+            Container(
+              height: 59,
+              color: const Color(0xffF6F6F6),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
+                    },
+                  child: Row(
+                    children: const [
+                      SizedBox(width: 40),
+                      Text("Karachi , Pakistan",
+                        style:
+                        TextStyle(fontSize: 25,
+                            fontFamily: "PoppinsMed",
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                )
+            ),
+            const SizedBox(height: 25),
+            Container(
+                height: 59,
+                color: const Color(0xffF6F6F6),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
+                  },
+                  child: Row(
+                    children: const [
+                      SizedBox(width: 40),
+                      Text("Sydney , Australia",
+                        style:
+                        TextStyle(fontSize: 25,
+                            fontFamily: "PoppinsMed",
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                )
+            ),
+            const SizedBox(height: 25),
+            Container(
+                height: 59,
+                color: const Color(0xffF6F6F6),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
+                  },
+                  child: Row(
+                    children: const [
+                      SizedBox(width: 40),
+                      Text("Barcelona , Argentina",
+                        style:
+                        TextStyle(fontSize: 25,
+                            fontFamily: "PoppinsMed",
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                )
+            )
           ],
         )
     );

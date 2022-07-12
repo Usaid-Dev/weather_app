@@ -1,146 +1,105 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/home.dart';
 
 class city_selection extends StatelessWidget {
-  const city_selection({Key? key}) : super(key: key);
+  city_selection({Key? key}) : super(key: key);
+
+  List<String> Cities = [
+    "Karachi",
+    "Dubai",
+    "Lahore",
+    "London",
+    "Islamabad",
+    "Maldives",
+    "Faisalabad",
+    "Swat",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 22,top: 80),
-              child: Row(
-                children: [
-                  GestureDetector(
-                      onTap: ()=>onback_pressed(context),
-                      child: const Icon(Icons.arrow_back)
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 22 , top: 10, bottom:20),
-              child: Row(
-                children: const [
-                  Text("Select City",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.black)
-                  )
-                ],
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 15,right: 15),
-              padding:  const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15)),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w500),
-                  decoration: const InputDecoration(
-                    hintText: "Enter your city name",
-                )
-            ),
-            ),
-            const SizedBox(height: 22),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 59,
-              color: const Color(0xffF6F6F6),
-              child: GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
-                },
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 25,
-                      child: Image.asset("images/point.png")
-                    ),
-                    const SizedBox(width: 15),
-                    const Text("Current Location",
-                      style:
-                      TextStyle(fontSize: 25,
-                          fontFamily: "PoppinsMed",
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                      ),
-                  ],
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/selection");
+            },
+            child: Container(
+                margin: const EdgeInsets.only(top: 60, left: 20),
+                child: Image.asset("images/back-arrow.png")),
+          ),
+          Container(
+              margin: const EdgeInsets.only(top: 20, left: 22),
+              child: const Text(
+                "Select City",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: "PoppinsMed",
                 ),
-              ),
-            ),
-            const SizedBox(height: 25),
-            Container(
-              height: 59,
-              color: const Color(0xffF6F6F6),
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
-                    },
-                  child: Row(
-                    children: const [
-                      SizedBox(width: 40),
-                      Text("Karachi , Pakistan",
-                        style:
-                        TextStyle(fontSize: 25,
-                            fontFamily: "PoppinsMed",
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+              )),
+          Container(
+            margin: const EdgeInsets.only(top: 40, left: 22, right: 22),
+            decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 3,
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
-                )
+                ],
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6),
+                border: Border.all(color: Colors.grey, width: 1)),
+            padding: const EdgeInsets.all(8),
+            child: const TextField(
+              style: TextStyle(color: Colors.black, fontSize: 15),
+              decoration: InputDecoration(
+                  hintText: "Enter your city name",
+                  hintStyle: TextStyle(color: Color(0xFFA8A8A8), fontSize: 16),
+                  border: InputBorder.none),
             ),
-            const SizedBox(height: 25),
-            Container(
-                height: 59,
-                color: const Color(0xffF6F6F6),
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
-                  },
-                  child: Row(
-                    children: const [
-                      SizedBox(width: 40),
-                      Text("Sydney , Australia",
-                        style:
-                        TextStyle(fontSize: 25,
-                            fontFamily: "PoppinsMed",
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                )
-            ),
-            const SizedBox(height: 25),
-            Container(
-                height: 59,
-                color: const Color(0xffF6F6F6),
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const home()));
-                  },
-                  child: Row(
-                    children: const [
-                      SizedBox(width: 40),
-                      Text("Barcelona , Argentina",
-                        style:
-                        TextStyle(fontSize: 25,
-                            fontFamily: "PoppinsMed",
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                )
-            )
-          ],
-        )
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: Cities.length ?? 0,
+                itemBuilder: (ctx, idx) => cityWidget(ctx, idx)),
+          ),
+          const SizedBox(
+            height: 10,
+          )
+        ],
+      ),
     );
   }
-  onback_pressed(BuildContext context) {
-    Navigator.pop(context);
+
+  Widget cityWidget(BuildContext ctx, int idx) {
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(ctx, "/home",arguments: {
+          "city":Cities[idx]
+        });
+      },
+      child: Container(
+          width: MediaQuery.of(ctx).size.width,
+          height: 75,
+          margin: const EdgeInsets.only(top: 20),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10), color: const Color(0xffF6F6F6)),
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            children: [
+              const SizedBox(
+                width: 25,
+              ),
+              Text(
+                Cities[idx],
+                style: const TextStyle(fontFamily: "PoppinsMed", fontSize: 17),
+              ),
+            ],
+          )
+      ),
+    );
   }
 }

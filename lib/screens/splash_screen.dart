@@ -13,9 +13,7 @@ class SplashScreen extends State<splash_screen> {
   void initState() {super.initState(); _navigateToDashboard();}
   _navigateToDashboard() async{
     await Future.delayed(const Duration (milliseconds: 5000),() {});
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const landing_Screen()));
-
+    Navigator.push(context, MaterialPageRoute(builder: (context) =>  landing_Screen()));
   }
 
   @override

@@ -175,7 +175,7 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         Image.asset("images/cloud.png"),
                         const SizedBox(height: 10),
-                        Text("${hr1!.tempC}° "),
+                        Text("${hr1?.tempC}° "),
                       ],
                     ),
                     Column(
@@ -185,7 +185,7 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         Image.asset("images/cloud.png"),
                         const SizedBox(height: 10),
-                        Text("${hr2!.tempC}° "),
+                        Text("${hr2?.tempC}° "),
                       ],
                     ),
                     Column(
@@ -194,7 +194,7 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         Image.asset("images/cloud.png"),
                         const SizedBox(height: 10),
-                        Text("${hr3!.tempC}° "),
+                        Text("${hr3?.tempC}° "),
                       ],
                     ),
                     Column(
@@ -203,7 +203,7 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         Image.asset("images/cloud.png"),
                         const SizedBox(height: 10),
-                        Text("${hr4!.tempC}° "),
+                        Text("${hr4?.tempC}° "),
                       ],
                     ),
                     Column(
@@ -212,7 +212,7 @@ class _HomeState extends State<Home> {
                         const SizedBox(height: 10),
                         Image.asset("images/cloud.png"),
                         const SizedBox(height: 10),
-                        Text("${hr5!.tempC}° "),
+                        Text("${hr5?.tempC}° "),
                       ],
                     ),
                   ],

@@ -63,7 +63,7 @@ class city_selection extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-                itemCount: Cities.length ?? 0,
+                itemCount: Cities.length,
                 itemBuilder: (ctx, idx) => cityWidget(ctx, idx)),
           ),
           const SizedBox(

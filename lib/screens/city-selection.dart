@@ -6,8 +6,8 @@ class city_selection extends StatelessWidget {
   List<String> Cities = [
     "Karachi",
     "Dubai",
-    "Lahore",
     "London",
+    "Lahore",
     "Islamabad",
     "Maldives",
     "Faisalabad",
@@ -27,7 +27,8 @@ class city_selection extends StatelessWidget {
             },
             child: Container(
                 margin: const EdgeInsets.only(top: 60, left: 20),
-                child: Image.asset("images/back-arrow.png")),
+                child: Image.asset("images/back-arrow.png")
+            ),
           ),
           Container(
               margin: const EdgeInsets.only(top: 20, left: 22),
@@ -37,7 +38,8 @@ class city_selection extends StatelessWidget {
                   fontSize: 30,
                   fontFamily: "PoppinsMed",
                 ),
-              )),
+              )
+          ),
           Container(
             margin: const EdgeInsets.only(top: 40, left: 22, right: 22),
             decoration: BoxDecoration(
@@ -46,12 +48,13 @@ class city_selection extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 3,
                     blurRadius: 3,
-                    offset: const Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3),
                   ),
                 ],
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(6),
-                border: Border.all(color: Colors.grey, width: 1)),
+                border: Border.all(color: Colors.grey, width: 1)
+            ),
             padding: const EdgeInsets.all(8),
             child: const TextField(
               style: TextStyle(color: Colors.black, fontSize: 15),
@@ -86,7 +89,8 @@ class city_selection extends StatelessWidget {
           height: 75,
           margin: const EdgeInsets.only(top: 20),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: const Color(0xffF6F6F6)),
+              borderRadius: BorderRadius.circular(10), color: const Color(0xffF6F6F6)
+          ),
           padding: const EdgeInsets.all(5),
           child: Row(
             children: [

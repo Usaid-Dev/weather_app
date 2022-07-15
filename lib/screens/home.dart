@@ -73,9 +73,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          //bgImg
           Container(
             height: MediaQuery.of(context).size.height * 70 / 100,
             width: MediaQuery.of(context).size.width,
@@ -128,7 +128,8 @@ class _HomeState extends State<Home> {
                               fontFamily: "PoppinsBold"),
                         ),
                       ],
-                    )),
+                    )
+                ),
                 Container(
                     margin: const EdgeInsets.only(top: 9),
                     child: Row(
@@ -142,11 +143,11 @@ class _HomeState extends State<Home> {
                               fontFamily: "PoppinsMed"),
                         ),
                       ],
-                    ))
+                    )
+                )
               ],
             ),
           ),
-          //Forecast
           Container(
             margin: const EdgeInsets.only(top: 45, left: 23, right: 23),
             child: Column(children: [
@@ -158,7 +159,7 @@ class _HomeState extends State<Home> {
                     style: TextStyle(fontSize: 19, fontFamily: "PoppinsMed"),
                   ),
                   Text(
-                    "$Area , $Country",
+                    "$Area",
                     style: const TextStyle(fontSize: 15, fontFamily: "PoppinsMed"),
                   ),
                 ],
@@ -179,7 +180,6 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     Column(
-                      // style:TextStyle(fontSize: 15,fontWeight: FontWeight.w400,)
                       children: [
                         Text(dateFormat.format(DateTime.parse(hr2?.time ?? "2022-05-20 23:12:20.000"))),
                         const SizedBox(height: 10),
